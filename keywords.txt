@@ -1,0 +1,3 @@
+ThermoPro	KEYWORD1
+ScannableBleDevice	KEYWORD2
+getScanCallback KEYWORD3
