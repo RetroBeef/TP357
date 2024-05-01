@@ -6,11 +6,10 @@
 #pragma pack(push,1)
 typedef struct {
   uint8_t unk1;
-  uint8_t temperature;
-  uint8_t unk2;
+  uint16_t temperature;
   uint8_t humidity;
+  uint8_t unk2;
   uint8_t unk3;
-  uint8_t unk4;
 } ble_temphumid_t;
 #pragma pack(pop)
 
