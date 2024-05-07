@@ -23,11 +23,11 @@ String ThermoPro::toList() {
 
 String ThermoPro::toJSON() {
     String jsonStr = "{";
-    jsonStr += "\"add\":" + String(address.toString().c_str()) + ",";
-    jsonStr += "\"air\":{";
+    jsonStr += "\"add\":\"" + String(address.toString().c_str()) + "\",";
     jsonStr += "\"temp\":{\"v\":" + String(temperature, 2) + ",\"u\":\"°C\"},";
     jsonStr += "\"hum\":{\"v\":" + String(humidity) + ",\"u\":\"% rH\"},";
-    jsonStr += "}}";
+    jsonStr += "\"lastSeen\":{\"v\":" + String(millis()-lastSeen) + ",\"u\":\"ms ago\"}";
+    jsonStr += "}";
 
     return jsonStr;
 }
