@@ -20,3 +20,14 @@ ThermoPro::ThermoPro(const char* address) : ScannableBleDevice(BLEAddress(addres
 String ThermoPro::toList() {
   return "Air:\nTemperature: " + String(temperature, 2) + " °C\nHumidity: " + String(humidity) + "% rH\nlast seen: " + String(millis()-lastSeen) + "ms ago\n";
 }
+
+String ThermoPro::toJSON() {
+    String jsonStr = "{";
+    jsonStr += "\"add\":" + String(address.toString().c_str()) + ",";
+    jsonStr += "\"air\":{";
+    jsonStr += "\"temp\":{\"v\":" + String(temperature, 2) + ",\"u\":\"°C\"},";
+    jsonStr += "\"hum\":{\"v\":" + String(humidity) + ",\"u\":\"% rH\"},";
+    jsonStr += "}}";
+
+    return jsonStr;
+}

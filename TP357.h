@@ -32,4 +32,5 @@ public:
   }
   virtual ~ThermoPro(){}
   String toList();
+  String toJSON();
 };
